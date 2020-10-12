@@ -1,7 +1,7 @@
 
 import RPi.GPIO as GPIO
 import time
-import serial
+#import serial
 
 
 BCM = [21]
