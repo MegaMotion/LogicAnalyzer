@@ -19,7 +19,7 @@ MPU_address_2 = 0x69
 MX_port = 0x07
 MPU_WHO_AM_I = 0x77
 
-MILIGHT_address = 0x70
+MILIGHT_address = 0x53
 
 
 max_loops = 20
