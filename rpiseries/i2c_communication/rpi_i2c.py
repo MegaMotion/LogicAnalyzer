@@ -43,8 +43,9 @@ while keepGoing:
     #data_list = list(data)
     #for i in data_list:
     #Sends to the Slaves
-    data = [128, 53, 0, 0, 0]
-    bus.write_i2c_block_data(MILIGHT_address,0,data)
+    data_on = [53, 8, 0, 0]
+    data_off = [53, 0, 0, 0]
+    bus.write_i2c_block_data(MILIGHT_address,128,data_on)
     #bus.write_byte(MILIGHT_address, int(0x80))
     #bus.write_byte(MILIGHT_address, int(0x35))
     #bus.write_byte(MILIGHT_address, int(0x00))
@@ -54,11 +55,12 @@ while keepGoing:
     #writeNumber(int(0x0A))
     time.sleep(0.25)
     
-    bus.write_byte(MILIGHT_address, int(0x80))
-    bus.write_byte(MILIGHT_address, int(0x35))
-    bus.write_byte(MILIGHT_address, int(0x08))
-    bus.write_byte(MILIGHT_address, int(0x00))
-    bus.write_byte(MILIGHT_address, int(0x00))
+    bus.write_i2c_block_data(MILIGHT_address,128,data_off)
+    #bus.write_byte(MILIGHT_address, int(0x80))
+    #bus.write_byte(MILIGHT_address, int(0x35))
+    #bus.write_byte(MILIGHT_address, int(0x08))
+    #bus.write_byte(MILIGHT_address, int(0x00))
+    #bus.write_byte(MILIGHT_address, int(0x00))
     time.sleep(0.25)
     
     print("Looping: " + str(i))
