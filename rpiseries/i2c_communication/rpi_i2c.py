@@ -41,7 +41,7 @@ while keepGoing:
     #for i in data_list:
     #Sends to the Slaves 
     bus.write_byte(MX_address, MX_port)
-    bus.write_byte(int(0x0A))
+    bus.write_byte(MX_address, int(0x0A))
     #writeNumber(1)#(int(ord(i)))
     #writeNumber(int(0x0A))
     time.sleep(0.1)
