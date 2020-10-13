@@ -43,8 +43,8 @@ while keepGoing:
     #data_list = list(data)
     #for i in data_list:
     #Sends to the Slaves
-    data_on = [53, 8, 0, 0]
-    data_off = [53, 0, 0, 0]
+    data_on = [32, 8, 0, 0]
+    data_off = [32, 0, 0, 0]
     bus.write_i2c_block_data(MILIGHT_address,128,data_on)
     #bus.write_byte(MILIGHT_address, int(0x80))
     #bus.write_byte(MILIGHT_address, int(0x35))
