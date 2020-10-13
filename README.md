@@ -56,7 +56,9 @@ I am using the BCM numbering system for the GPIO pins, because it is necessary i
 
 
 
+More i2c stuff to do here:
 
+  https://radiostud.io/howto-i2c-communication-rpi/
 
 Now, the scripts, such as they are:
 
