@@ -43,7 +43,7 @@ while keepGoing:
     #data_list = list(data)
     #for i in data_list:
     #Sends to the Slaves
-    data = [int(0x80), int(0x35), int(0x00), int(0x00), int(0x00)]
+    data = [128, 53, 0, 0, 0]
     bus.write_byte_data(MILIGHT_address,0,data)
     #bus.write_byte(MILIGHT_address, int(0x80))
     #bus.write_byte(MILIGHT_address, int(0x35))
