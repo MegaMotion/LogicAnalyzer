@@ -1,7 +1,7 @@
 
 import RPi.GPIO as GPIO
 import time
-import serial
+#import serial
 
 
 BCM = [6,15,19,26,12,16,20,21]
@@ -32,7 +32,6 @@ while keepGoing:
     else:
         GPIO.output(BCM[2],GPIO.LOW)
         GPIO.output(BCM[3],GPIO.HIGH)
-
     
     if (i % 8 == 0):
         GPIO.output(BCM[4],GPIO.HIGH)
@@ -40,7 +39,6 @@ while keepGoing:
     else:
         GPIO.output(BCM[4],GPIO.LOW)
         GPIO.output(BCM[5],GPIO.HIGH)
-
     
     if (i % 16 == 0):
         GPIO.output(BCM[6],GPIO.HIGH)
@@ -53,13 +51,10 @@ while keepGoing:
     if (i > maxLoops):
         keepGoing = False
 
-
     print "looping: " + str(i)
     time.sleep(0.1)
 
-        
 #Exit gracefully?
-port.close()
 GPIO.cleanup()
 
 print "Done!"
