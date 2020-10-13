@@ -43,6 +43,7 @@ while keepGoing:
     #data_list = list(data)
     #for i in data_list:
     #Sends to the Slaves 
+    bus.write_byte(MILIGHT_address, int(0x80))
     bus.write_byte(MILIGHT_address, int(0x35))
     bus.write_byte(MILIGHT_address, int(0x00))
     bus.write_byte(MILIGHT_address, int(0x00))
@@ -51,6 +52,7 @@ while keepGoing:
     #writeNumber(int(0x0A))
     time.sleep(0.25)
     
+    bus.write_byte(MILIGHT_address, int(0x80))
     bus.write_byte(MILIGHT_address, int(0x35))
     bus.write_byte(MILIGHT_address, int(0x08))
     bus.write_byte(MILIGHT_address, int(0x00))
