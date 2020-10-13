@@ -19,6 +19,9 @@ MPU_address_2 = 0x69
 MX_port = 0x07
 MPU_WHO_AM_I = 0x77
 
+MILIGHT_address = 0x53
+
+
 max_loops = 20
 i = 0
 keepGoing = True
@@ -40,11 +43,20 @@ while keepGoing:
     #data_list = list(data)
     #for i in data_list:
     #Sends to the Slaves 
-    bus.write_byte_data(MX_address, 0, MX_port)
-    bus.write_byte(MX_address, int(0x0A))
+    bus.write_byte(MILIGHT_address, int(0x35))
+    bus.write_byte(MILIGHT_address, int(0x00))
+    bus.write_byte(MILIGHT_address, int(0x00))
+    bus.write_byte(MILIGHT_address, int(0x00))
     #writeNumber(1)#(int(ord(i)))
     #writeNumber(int(0x0A))
-    time.sleep(0.1)
+    time.sleep(0.25)
+    
+    bus.write_byte(MILIGHT_address, int(0x35))
+    bus.write_byte(MILIGHT_address, int(0x08))
+    bus.write_byte(MILIGHT_address, int(0x00))
+    bus.write_byte(MILIGHT_address, int(0x00))
+    time.sleep(0.25)
+    
     print("Looping: " + str(i))
     i = i + 1
     if i > max_loops:
