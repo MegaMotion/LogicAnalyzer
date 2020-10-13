@@ -40,13 +40,15 @@ while keepGoing:
     #data_list = list(data)
     #for i in data_list:
     #Sends to the Slaves 
-    writeNumber(1)#(int(ord(i)))
+    bus.write_byte(MX_address, MX_port)
+    bus.write_byte(int(0x0A))
+    #writeNumber(1)#(int(ord(i)))
+    #writeNumber(int(0x0A))
     time.sleep(0.1)
     print("Looping: " + str(i))
     i = i + 1
     if i > max_loops:
         keepGoing = False
-    #writeNumber(int(0x0A))
-
+    
 #End of the Script
 
